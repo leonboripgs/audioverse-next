@@ -23,6 +23,7 @@ jest.mock('@lib/writeFeedFile');
 
 const loadData = buildLoader(GetSeriesDetailDataDocument, {
 	series: {
+		id: 'the_series_id',
 		title: 'the_series_title',
 		imageWithFallback: {
 			url: 'the_series_image',

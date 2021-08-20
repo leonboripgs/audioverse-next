@@ -54,6 +54,7 @@ const taggedRecording = {
 };
 
 const recording = {
+	id: 'the_recording_id',
 	title: 'the_recording_title',
 	persons: [
 		{

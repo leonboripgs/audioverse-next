@@ -3,12 +3,12 @@ import React, { CSSProperties } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
 
 import ProgressBar from '@components/atoms/progressBar';
-import ButtonDownload from '@components/molecules/buttonDownload';
-import ButtonFavorite from '@components/molecules/buttonFavorite';
-import ButtonNudge from '@components/molecules/buttonNudge';
-import ButtonPlay from '@components/molecules/buttonPlay';
-import ButtonShareRecording from '@components/molecules/buttonShareRecording';
-import ButtonSpeed from '@components/molecules/buttonSpeed';
+import ButtonDownload from '@components/molecules/button/buttonDownload';
+import ButtonFavorite from '@components/molecules/button/buttonFavorite';
+import ButtonNudge from '@components/molecules/button/buttonNudge';
+import ButtonPlay from '@components/molecules/button/buttonPlay';
+import ButtonShareRecording from '@components/molecules/button/buttonShareRecording';
+import ButtonSpeed from '@components/molecules/button/buttonSpeed';
 import PlaybackTimes from '@components/molecules/playbackTimes';
 import { PlayerFragment } from '@lib/generated/graphql';
 import hasVideo from '@lib/hasVideo';

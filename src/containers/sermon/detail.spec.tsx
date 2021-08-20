@@ -53,6 +53,10 @@ function loadSermonDetailData(sermon: any = undefined): void {
 		videoFiles: [],
 		audioDownloads: [],
 		videoDownloads: [],
+		sponsor: {
+			id: 'the_sponsor_id',
+			title: 'the_sponsor_title',
+		},
 		...sermon,
 	};
 
@@ -318,6 +322,7 @@ describe('sermon detail page', () => {
 	it('includes sponsor title', async () => {
 		loadSermonDetailData({
 			sponsor: {
+				id: 'the_sponsor_id',
 				title: 'the_title',
 				location: 'the_location',
 			},
@@ -422,6 +427,7 @@ describe('sermon detail page', () => {
 		loadSermonDetailData({
 			copyrightYear: 1999,
 			sponsor: {
+				id: 'the_sponsor_id',
 				title: 'the_sponsor',
 			},
 		});
@@ -510,6 +516,7 @@ describe('sermon detail page', () => {
 	it('displays recordings in series', async () => {
 		loadSermonDetailData({
 			sequence: {
+				id: 'series_id',
 				recordings: {
 					nodes: [
 						{
@@ -945,6 +952,7 @@ describe('sermon detail page', () => {
 	it('displays play buttons for sequence recordings', async () => {
 		loadSermonDetailData({
 			sequence: {
+				id: 'series_id',
 				recordings: {
 					nodes: [
 						{
@@ -966,6 +974,7 @@ describe('sermon detail page', () => {
 	it('loads series video into miniplayer on first click', async () => {
 		loadSermonDetailData({
 			sequence: {
+				id: 'series_id',
 				recordings: {
 					nodes: [
 						{
@@ -994,6 +1003,7 @@ describe('sermon detail page', () => {
 	it('loads series video into miniplayer after loading detail video into portal', async () => {
 		loadSermonDetailData({
 			sequence: {
+				id: 'series_id',
 				recordings: {
 					nodes: [
 						{
@@ -1029,6 +1039,7 @@ describe('sermon detail page', () => {
 		loadSermonDetailData({
 			audioFiles: [{ url: 'audio_url', mimeType: 'audio_mimetype' }],
 			sequence: {
+				id: 'series_id',
 				recordings: {
 					nodes: [
 						{
@@ -1077,6 +1088,7 @@ describe('sermon detail page', () => {
 	it('displays progress bar for sequence recordings', async () => {
 		loadSermonDetailData({
 			sequence: {
+				id: 'series_id',
 				recordings: {
 					nodes: [
 						{
@@ -1098,6 +1110,7 @@ describe('sermon detail page', () => {
 	it('disables sidebar progress bar interactivity', async () => {
 		loadSermonDetailData({
 			sequence: {
+				id: 'series_id',
 				recordings: {
 					nodes: [
 						{
@@ -1119,6 +1132,7 @@ describe('sermon detail page', () => {
 	it('displays durations in sidebar', async () => {
 		loadSermonDetailData({
 			sequence: {
+				id: 'the_sequence_id',
 				recordings: {
 					nodes: [
 						{
@@ -1143,6 +1157,7 @@ describe('sermon detail page', () => {
 	it('displays favorite button for sequence recordings', async () => {
 		loadSermonDetailData({
 			sequence: {
+				id: 'series_id',
 				recordings: {
 					nodes: [
 						{
@@ -1164,6 +1179,7 @@ describe('sermon detail page', () => {
 	it('displays part info', async () => {
 		loadSermonDetailData({
 			sequence: {
+				id: 'the_sequence_id',
 				recordings: {
 					nodes: [
 						{

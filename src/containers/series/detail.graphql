@@ -1,5 +1,6 @@
 query getSeriesDetailData($id: ID!, $offset: Int, $first: Int) {
 	series(id: $id) {
+		id
 		title
 		imageWithFallback {
 			url(size: 100)

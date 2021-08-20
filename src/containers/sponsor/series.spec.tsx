@@ -22,6 +22,7 @@ const renderPage = buildStaticRenderer(SponsorSeries, getStaticProps, {
 
 const loadData = buildLoader(GetSponsorSeriesPageDataDocument, {
 	sponsor: {
+		id: 'the_sponsor_id',
 		title: 'the_sponsor_title',
 		imageWithFallback: {
 			url: 'the_sponsor_image',

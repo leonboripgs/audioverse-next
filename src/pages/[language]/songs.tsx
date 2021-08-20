@@ -27,7 +27,7 @@ export async function getStaticPaths(): Promise<StaticPaths> {
 	const routes = getLanguageRoutes();
 
 	return {
-		paths: routes.map(makeSongsListRoute),
+		paths: routes.map((r) => makeSongsListRoute(r)),
 		fallback: true,
 	};
 }

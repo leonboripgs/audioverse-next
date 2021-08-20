@@ -5,6 +5,7 @@ query getSponsorSeriesPageData(
 	$offset: Int
 ) {
 	sponsor(id: $id) {
+		id
 		title
 		imageWithFallback {
 			url(size: 100)

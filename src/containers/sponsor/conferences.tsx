@@ -11,13 +11,12 @@ import {
 	makeSponsorRoute,
 } from '@lib/routes';
 import useLanguageRoute from '@lib/useLanguageRoute';
-import { useQueryString } from '@lib/useQueryString';
 import { SponsorConferencesStaticProps } from '@pages/[language]/sponsors/[id]/conferences/page/[i]';
 
 type Props = SponsorConferencesStaticProps['props'];
 
 function SponsorConferences({ nodes, data, pagination }: Props): JSX.Element {
-	const id = useQueryString('id') || '';
+	const id = data?.sponsor?.id || '';
 	const languageRoute = useLanguageRoute();
 	return (
 		<>

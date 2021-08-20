@@ -2,8 +2,8 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
 import ProgressBar from '@components/atoms/progressBar';
-import ButtonFavorite from '@components/molecules/buttonFavorite';
-import ButtonPlay from '@components/molecules/buttonPlay';
+import ButtonFavorite from '@components/molecules/button/buttonFavorite';
+import ButtonPlay from '@components/molecules/button/buttonPlay';
 import { TeaseRecordingFragment } from '@lib/generated/graphql';
 import { useFormattedDuration } from '@lib/time';
 import usePlaybackSession from '@lib/usePlaybackSession';

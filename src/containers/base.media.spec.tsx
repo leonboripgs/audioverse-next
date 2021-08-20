@@ -11,16 +11,19 @@ import ReactTestUtils from 'react-dom/test-utils';
 import videojs from 'video.js';
 
 import { Recording } from '@components/organisms/recording';
-// import AndMiniplayer from '@components/templates/andMiniplayer';
 import { PlayerFragment, RecordingFragment } from '@lib/generated/graphql';
 import { setPlayerMock } from '@lib/test/helpers';
 import MyApp from '@pages/_app';
 
-const recordingAudio: Partial<PlayerFragment> = {
+const recordingAudio: Partial<RecordingFragment> = {
 	id: 'the_sermon_id',
 	title: 'the_sermon_title',
 	sequence: {
+		id: 'the_sequence_id',
 		title: 'the_sequence_title',
+		recordings: {
+			nodes: [],
+		},
 	},
 	audioFiles: [
 		{
@@ -31,11 +34,15 @@ const recordingAudio: Partial<PlayerFragment> = {
 	],
 };
 
-const recordingVideo: Partial<PlayerFragment> = {
+const recordingVideo: Partial<RecordingFragment> = {
 	id: 'the_sermon_id',
 	title: 'the_sermon_title',
 	sequence: {
+		id: 'the_sequence_id',
 		title: 'the_sequence_title',
+		recordings: {
+			nodes: [],
+		},
 	},
 	videoFiles: [
 		{
@@ -46,11 +53,15 @@ const recordingVideo: Partial<PlayerFragment> = {
 	],
 };
 
-const recordingAudioVideo: Partial<PlayerFragment> = {
+const recordingAudioVideo: Partial<RecordingFragment> = {
 	id: 'the_sermon_id',
 	title: 'the_sermon_title',
 	sequence: {
+		id: 'the_sequence_id',
 		title: 'the_sequence_title',
+		recordings: {
+			nodes: [],
+		},
 	},
 	videoFiles: [
 		{

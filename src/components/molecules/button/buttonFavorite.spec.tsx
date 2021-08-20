@@ -2,7 +2,7 @@ import { waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
 
-import ButtonFavorite from '@components/molecules/buttonFavorite';
+import ButtonFavorite from '@components/molecules/button/buttonFavorite';
 import { isRecordingFavorited, setRecordingFavorited } from '@lib/api';
 import * as api from '@lib/api';
 import { renderWithIntl, withMutedReactQueryLogger } from '@lib/test/helpers';

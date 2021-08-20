@@ -25,7 +25,7 @@ export async function getStaticPaths(): Promise<StaticPaths> {
 	const baseRoutes = getLanguageRoutes();
 
 	return {
-		paths: baseRoutes.map(makeBibleListRoute),
+		paths: baseRoutes.map((r) => makeBibleListRoute(r)),
 		fallback: true,
 	};
 }

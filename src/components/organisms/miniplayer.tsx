@@ -2,8 +2,8 @@ import Slider from '@material-ui/core/Slider';
 import React, { useContext } from 'react';
 
 import ProgressBar from '@components/atoms/progressBar';
-import ButtonNudge from '@components/molecules/buttonNudge';
-import ButtonPlay from '@components/molecules/buttonPlay';
+import ButtonNudge from '@components/molecules/button/buttonNudge';
+import ButtonPlay from '@components/molecules/button/buttonPlay';
 import { PlaybackContext } from '@components/templates/andMiniplayer';
 import { useFormattedTime } from '@lib/time';
 

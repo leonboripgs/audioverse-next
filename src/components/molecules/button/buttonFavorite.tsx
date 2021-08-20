@@ -3,8 +3,8 @@ import { useIntl } from 'react-intl';
 
 import { useIsRecordingFavorited } from '@lib/api';
 
-import IconUnavorite from '../../../public/img/icon-fav-filled.svg';
-import IconFavorite from '../../../public/img/icon-fav-outline.svg';
+import IconUnavorite from '../../../../public/img/icon-fav-filled.svg';
+import IconFavorite from '../../../../public/img/icon-fav-outline.svg';
 
 import styles from './buttonFavorite.module.scss';
 

@@ -5,6 +5,7 @@ query getSponsorConferencesPageData(
 	$first: Int
 ) {
 	sponsor(id: $id) {
+		id
 		title
 	}
 	conferences(

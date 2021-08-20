@@ -5,7 +5,7 @@ import * as intl from 'react-intl';
 import { FormattedMessage } from 'react-intl';
 import { toast } from 'react-toastify';
 
-import ButtonFavorite from '@components/molecules/buttonFavorite';
+import ButtonFavorite from '@components/molecules/button/buttonFavorite';
 import CardPlayable from '@components/molecules/cardPlayable';
 import Login from '@components/molecules/login';
 import Player from '@components/molecules/player';
@@ -176,6 +176,7 @@ describe('localization usage', () => {
 			<SermonDetail
 				sermon={
 					{
+						id: 'the_sermon_id',
 						description: 'z',
 						recordingDate: '2003-03-01T09:30:00.000Z',
 						recordingTags: {
@@ -197,6 +198,7 @@ describe('localization usage', () => {
 						],
 						sequenceIndex: 1,
 						sequence: {
+							id: 'the_sequence_id',
 							recordings: {
 								nodes: [{ id: 1 }, { id: 2 }, { id: 3 }] as any,
 							},
@@ -224,7 +226,7 @@ describe('localization usage', () => {
 
 	it('localizes SpeakerName login error', async () => {
 		const { getByRole } = await renderWithQueryProvider(
-			<SpeakerName person={{} as Person} />
+			<SpeakerName person={{ id: 'the_person_id' } as Person} />
 		);
 
 		await waitFor(() => expect(isPersonFavorited).toBeCalled());
@@ -247,7 +249,7 @@ describe('localization usage', () => {
 						name: 'z',
 					},
 				]}
-				pagination={{ current: 0, total: 0 }}
+				pagination={{ current: 1, total: 1 }}
 			/>
 		);
 
@@ -373,7 +375,7 @@ describe('localization usage', () => {
 		const screen = await renderWithQueryProvider(
 			<ConferenceDetail
 				nodes={[{ id: 'z' }] as any}
-				data={undefined as any}
+				data={{ conference: { id: 'z' } } as any}
 				pagination={undefined as any}
 				rssPath={''}
 			/>
@@ -399,7 +401,14 @@ describe('localization usage', () => {
 			<Presenter
 				rssPath={'rssPath'}
 				nodes={[{ id: 'id' }] as any}
-				data={undefined as any}
+				data={
+					{
+						person: {
+							id: 'z',
+							imageWithFallback: { url: '' },
+						},
+					} as any
+				}
 				pagination={undefined as any}
 			/>
 		);
@@ -426,13 +435,37 @@ describe('localization usage', () => {
 	});
 
 	const scenarios: [React.ComponentType<any>, any][] = [
-		[SponsorTeachings, { nodes: [{ id: 'z' }] }],
-		[SponsorBooks, { nodes: [{ id: 'z' }] }],
-		[SponsorAlbums, { nodes: [{ id: 'z' }] }],
-		[SponsorConferences, { nodes: [{ id: 'z' }] }],
-		[SponsorSeries, { nodes: [{ id: 'z' }] }],
+		[
+			SponsorTeachings,
+			{ nodes: [{ id: 'z' }], data: { sponsor: { id: 'z' } } },
+		],
+		[SponsorBooks, { nodes: [{ id: 'z' }], data: { sponsor: { id: 'z' } } }],
+		[SponsorAlbums, { nodes: [{ id: 'z' }], data: { sponsor: { id: 'z' } } }],
+		[
+			SponsorConferences,
+			{ nodes: [{ id: 'z' }], data: { sponsor: { id: 'z' } } },
+		],
+		[
+			SponsorSeries,
+			{
+				nodes: [{ id: 'z' }],
+				data: { sponsor: { id: 'z', imageWithFallback: { url: 'z' } } },
+			},
+		],
 		[SeriesList, { nodes: [{ id: 'z' }] }],
-		[SeriesDetail, { nodes: [{ id: 'z' }] }],
+		[
+			SeriesDetail,
+			{
+				nodes: [{ id: 'z' }],
+				data: {
+					series: {
+						id: 'z',
+						imageWithFallback: { url: 'z' },
+						sponsor: { id: 'z' },
+					},
+				},
+			},
+		],
 		[Playlists, {}],
 		[Logout, {}],
 		[Register, {}],

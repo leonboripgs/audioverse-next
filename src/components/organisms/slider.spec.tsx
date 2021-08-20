@@ -31,6 +31,7 @@ describe('card slider', () => {
 					<CardSermon
 						recording={
 							{
+								id: 'the_recording_id',
 								title: 'the_recording_title',
 							} as any
 						}

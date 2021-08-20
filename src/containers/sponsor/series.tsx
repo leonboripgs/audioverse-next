@@ -12,14 +12,13 @@ import {
 	makeSponsorSeriesRoute,
 } from '@lib/routes';
 import useLanguageRoute from '@lib/useLanguageRoute';
-import { useQueryString } from '@lib/useQueryString';
 import { SponsorSeriesStaticProps } from '@pages/[language]/sponsors/[id]/series/page/[i]';
 
 type Props = SponsorSeriesStaticProps['props'];
 
 function SponsorSeries({ data, nodes, pagination }: Props): JSX.Element {
 	const languageRoute = useLanguageRoute();
-	const id = useQueryString('id') || '';
+	const id = data?.sponsor?.id || '';
 	const imageSrc = data?.sponsor?.imageWithFallback.url;
 	return (
 		<>

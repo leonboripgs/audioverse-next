@@ -2,8 +2,8 @@ import React from 'react';
 import { useIntl } from 'react-intl';
 
 import ProgressBar from '@components/atoms/progressBar';
-import ButtonFavorite from '@components/molecules/buttonFavorite';
-import ButtonPlay from '@components/molecules/buttonPlay';
+import ButtonFavorite from '@components/molecules/button/buttonFavorite';
+import ButtonPlay from '@components/molecules/button/buttonPlay';
 import { CardTheme } from '@components/molecules/cardHat';
 import SpeakerName from '@components/molecules/speakerName';
 import {

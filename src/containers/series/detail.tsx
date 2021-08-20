@@ -12,14 +12,13 @@ import {
 	makeSponsorRoute,
 } from '@lib/routes';
 import useLanguageRoute from '@lib/useLanguageRoute';
-import { useQueryString } from '@lib/useQueryString';
 import { SeriesDetailStaticProps } from '@pages/[language]/series/[id]/page/[i]';
 
 type Props = SeriesDetailStaticProps['props'];
 
 function SeriesDetail({ data, nodes, pagination, rssUrl }: Props) {
 	const languageRoute = useLanguageRoute();
-	const seriesId = useQueryString('id') || '';
+	const seriesId = data?.series?.id || '';
 	const sponsorId = data?.series?.sponsor?.id || '';
 	const conferenceId = data?.series?.collection?.id || '';
 	return (

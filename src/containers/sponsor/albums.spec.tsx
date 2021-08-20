@@ -22,6 +22,7 @@ const renderPage = buildStaticRenderer(SponsorAlbums, getStaticProps, {
 
 const loadData = buildLoader(GetSponsorAlbumsPageDataDocument, {
 	sponsor: {
+		id: 'the_sponsor_id',
 		title: 'the_sponsor_title',
 	},
 	musicAlbums: {

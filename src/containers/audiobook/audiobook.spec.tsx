@@ -47,6 +47,7 @@ function loadData(data: Partial<GetAudiobookDetailPageDataQuery> = {}) {
 				title: 'the_book_title',
 				shareUrl: 'the_book_share_url',
 				sponsor: {
+					id: 'the_sponsor_id',
 					title: 'the_sponsor_title',
 					location: 'the_sponsor_location',
 					website: 'the_sponsor_website',

@@ -4,7 +4,7 @@ import { FormattedMessage, useIntl } from 'react-intl';
 
 import { ButtonShareRecordingFragment } from '@lib/generated/graphql';
 
-import IconShare from '../../../public/img/icon-share.svg';
+import IconShare from '../../../../public/img/icon-share.svg';
 
 export default function ButtonShareRecording({
 	recording,

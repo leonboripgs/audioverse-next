@@ -22,6 +22,7 @@ const renderPage = buildStaticRenderer(SponsorConferences, getStaticProps, {
 
 const loadData = buildLoader(GetSponsorConferencesPageDataDocument, {
 	sponsor: {
+		id: 'the_sponsor_id',
 		title: 'the_sponsor_title',
 	},
 	conferences: {
